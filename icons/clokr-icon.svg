@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 148" fill="none">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="64" fill="#09090B"/>
+
+  <!-- Shield body -->
+  <path d="M64 8L16 26V68C16 100 37.6 129.2 64 140C90.4 129.2 112 100 112 68V26L64 8Z"
+        fill="#0f1a0f" stroke="#4ADE80" stroke-width="4"/>
+
+  <!-- Inner shield highlight -->
+  <path d="M64 18L26 33V68C26 96 44.4 121.8 64 131C83.6 121.8 102 96 102 68V33L64 18Z"
+        fill="url(#shieldGrad)" opacity="0.4"/>
+
+  <!-- Eye/mask slit -->
+  <rect x="34" y="60" width="60" height="14" rx="7" fill="#4ADE80" opacity="0.12"/>
+  <rect x="34" y="61" width="60" height="12" rx="6" fill="none" stroke="#4ADE80" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- C letterform — stylized arc -->
+  <path d="M80 46C76.4 40.8 70.6 37.5 64 37.5C52.7 37.5 43.5 48.1 43.5 61C43.5 73.9 52.7 84.5 64 84.5C70.6 84.5 76.4 81.2 80 76"
+        stroke="#4ADE80" stroke-width="7" stroke-linecap="round" fill="none"/>
+
+  <!-- Cyan dot / sparkle in top-right of shield -->
+  <circle cx="96" cy="38" r="5" fill="#22D3EE" opacity="0.7"/>
+  <circle cx="96" cy="38" r="3" fill="#22D3EE"/>
+
+  <!-- Small sparkle dots -->
+  <circle cx="106" cy="52" r="2" fill="#22D3EE" opacity="0.4"/>
+  <circle cx="100" cy="28" r="1.5" fill="#4ADE80" opacity="0.5"/>
+
+  <defs>
+    <linearGradient id="shieldGrad" x1="64" y1="18" x2="64" y2="131" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4ADE80" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+</svg>

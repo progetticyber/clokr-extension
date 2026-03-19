@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "CLOKR — AI Privacy Shield",
+  "version": "1.0.0",
+  "description": "Protect your personal data on ChatGPT, Claude & Gemini. Masks sensitive info before it reaches AI servers.",
+
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs"
+  ],
+
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "CLOKR — AI Privacy Shield",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://chat.openai.com/*",
+        "*://chatgpt.com/*",
+        "*://claude.ai/*",
+        "*://gemini.google.com/*"
+      ],
+      "js": [
+        "src/utils/pii-detector.js",
+        "src/utils/masker.js",
+        "src/content/chatgpt-adapter.js",
+        "src/content/main.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": [
+        "*://chat.openai.com/*",
+        "*://chatgpt.com/*",
+        "*://claude.ai/*",
+        "*://gemini.google.com/*"
+      ]
+    }
+  ]
+}

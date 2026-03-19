@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLOKR — AI Privacy Shield</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- HEADER: Logo + Toggle                                   -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <header class="popup-header">
+    <div class="logo-block">
+      <!-- SVG Logo: scudo minimalista con iniziale C -->
+      <svg class="logo-svg" viewBox="0 0 40 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="CLOKR logo">
+        <!-- Corpo dello scudo -->
+        <path d="M20 2L4 8V22C4 31.4 11.2 40.1 20 44C28.8 40.1 36 31.4 36 22V8L20 2Z"
+              fill="#09090B" stroke="#4ADE80" stroke-width="1.5"/>
+        <!-- Fessura occhio / linea di mascheramento -->
+        <rect x="11" y="19" width="18" height="4" rx="2" fill="#4ADE80" opacity="0.15"/>
+        <!-- C stilizzata al centro -->
+        <path d="M24.5 16C23.1 14.7 21.1 14 19 14C14.6 14 11 17.1 11 21C11 24.9 14.6 28 19 28C21.1 28 23.1 27.3 24.5 26"
+              stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <!-- Punto luminoso in alto a destra dello scudo -->
+        <circle cx="31" cy="11" r="2" fill="#22D3EE" opacity="0.6"/>
+      </svg>
+
+      <div class="logo-text">
+        <span class="logo-name">CLOKR</span>
+        <span class="logo-tagline">Invisible to AI. Visible to you.</span>
+      </div>
+    </div>
+
+    <!-- Toggle on/off protezione -->
+    <label class="toggle-wrapper" title="Enable/Disable protection" aria-label="Toggle protection">
+      <input type="checkbox" id="protectionToggle" />
+      <span class="toggle-track">
+        <span class="toggle-thumb"></span>
+      </span>
+    </label>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- SITE STATUS BANNER                                      -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div class="site-banner" id="siteBanner">
+    <span class="site-dot" id="siteDot"></span>
+    <span id="siteStatusText">No AI chatbot detected</span>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- STATS: Counter principale                               -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section class="stats-section">
+    <div class="stat-card stat-main">
+      <div class="stat-icon">🛡️</div>
+      <div class="stat-body">
+        <span class="stat-number" id="totalProtected">0</span>
+        <span class="stat-label">data items protected today</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- RECENT ACTIVITY: Ultimi 5 elementi mascherati           -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section class="activity-section">
+    <div class="section-header">
+      <span class="section-title">Recent Protection</span>
+      <button class="clear-btn" id="clearHistoryBtn" title="Clear history">Clear</button>
+    </div>
+
+    <ul class="activity-list" id="activityList">
+      <!-- Popolato dinamicamente da popup.js -->
+      <li class="activity-empty">
+        <span class="empty-icon">🔍</span>
+        <span>No items masked yet.<br/>Visit ChatGPT to get started.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- PROTECTION STATUS: Tipi di PII monitorati              -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section class="types-section">
+    <div class="section-title">Protected Data Types</div>
+    <div class="types-grid">
+      <div class="type-chip">📧 Email</div>
+      <div class="type-chip">📱 Phone</div>
+      <div class="type-chip">🪪 Cod. Fiscale</div>
+      <div class="type-chip">🏦 IBAN</div>
+      <div class="type-chip">💳 Credit Card</div>
+      <div class="type-chip">🌐 IP Address</div>
+      <div class="type-chip">📅 Date of Birth</div>
+      <div class="type-chip">🏥 Tessera San.</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- FOOTER                                                  -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <footer class="popup-footer">
+    <div class="footer-privacy">
+      <span class="privacy-dot"></span>Zero servers · Zero tracking · 100% local
+    </div>
+    <div class="footer-brand">
+      Powered by <strong>CLOKR</strong> v1.0
+    </div>
+    <div class="footer-pplx">
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">
+        Created with Perplexity Computer
+      </a>
+    </div>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
